@@ -1,5 +1,6 @@
 package vue;
 
+import java.awt.event.WindowEvent;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -19,8 +20,8 @@ public class Selection_Mediateur extends JFrame implements Observer{
 	public static final String ACTION_FIN_SEMAINE = "fds";
 	
 	public Selection_Mediateur(){
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 150);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setBounds(100, 100, 400, 100);
 		panelPrincipal = new JPanel();
 		setContentPane(panelPrincipal);
 		///////////////////////////////////////
@@ -44,6 +45,10 @@ public class Selection_Mediateur extends JFrame implements Observer{
 	@Override
 	public void update(Observable o, Object arg) {
 		
+	}
+	
+	public void closeSelf(){
+		this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
 	}
 
 }

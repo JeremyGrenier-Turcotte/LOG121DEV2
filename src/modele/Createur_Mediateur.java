@@ -1,6 +1,6 @@
 package modele;
 
-public class Createur_Mediateur implements Createur {
+public class Createur_Mediateur{
 
 	public static Mediateur_Prix getMediateur(String type){
 		if("SEMAINE".equalsIgnoreCase(type)){
